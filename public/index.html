@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Serverless - CI/CD with CodePipeline :: AWS System Manager</title>
+    <title>Serverless - Monitoring Lambda with CloudWatch and X-Ray :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1678132734" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678132734" rel="stylesheet">
-    <link href="/css/hybrid.css?1678132734" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678132734" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678132734" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678132734" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678132734" rel="stylesheet">
-    <link href="/css/theme.css?1678132734" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678132734" rel="stylesheet">
+    <link href="/css/nucleus.css?1678137066" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1678137066" rel="stylesheet">
+    <link href="/css/hybrid.css?1678137066" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1678137066" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1678137066" rel="stylesheet">
+    <link href="/css/auto-complete.css?1678137066" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1678137066" rel="stylesheet">
+    <link href="/css/theme.css?1678137066" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1678137066" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678132734" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1678137066" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678132734"></script>
+    <script src="/js/jquery-3.3.1.min.js?1678137066"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678132734"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678132734"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1678137066"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1678137066"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678132734"></script>
+<script type="text/javascript" src="/js/search.js?1678137066"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/1-preparation/" title="Preparation" class="dd-item 
+    <li data-nav-id="/1-preparation/" title="Preparing" class="dd-item 
         
         
         
         ">
       <a href="/1-preparation/">
-           <b> 1. </b> Preparation
+           <b> 1. </b> Preparing
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/" title="Build SAM pipeline" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/" title="Monitoring with CloudWatch" class="dd-item 
         
         
         
         ">
       <a href="/2-cloudwatch-monitor/">
-           <b> 2. </b> Build SAM pipeline
+           <b> 2. </b> Monitoring with CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Create Git repository" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Debugging with CloudWatch logs" class="dd-item 
         
         
         
         ">
       <a href="/2-cloudwatch-monitor/2-1-cloudwatch-log/">
-           <b> 2.1. </b> Create Git repository
+           <b> 2.1. </b> Debugging with CloudWatch logs
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,13 +167,41 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Create SAM pipeline" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Create custom metric" class="dd-item 
         
         
         
         ">
       <a href="/2-cloudwatch-monitor/2-2-cloudwatch-metric/">
-           <b> 2.2. </b> Create SAM pipeline
+           <b> 2.2. </b> Create custom metric
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/" title="Creating Alerts with CloudWatch Alarm" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/">
+           <b> 2.3. </b> Creating Alerts with CloudWatch Alarm
           
             <i class="fas fa-check read-icon"></i>
           
@@ -202,13 +230,13 @@
  
   
     
-    <li data-nav-id="/3-x-ray-trace/" title="Build pipeline for front-end" class="dd-item 
+    <li data-nav-id="/3-x-ray-trace/" title="Tracing with X-ray" class="dd-item 
         
         
         
         ">
       <a href="/3-x-ray-trace/">
-           <b> 3. </b> Build pipeline for front-end
+           <b> 3. </b> Tracing with X-ray
           
             <i class="fas fa-check read-icon"></i>
           
@@ -228,13 +256,13 @@
  
   
     
-    <li data-nav-id="/4-cleanup/" title="Cleanup" class="dd-item 
+    <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
       <a href="/4-cleanup/">
-           <b> 5. </b> Cleanup
+           <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -333,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>18-01-2023</font></i>
+        <i><font color=orange>07-03-2023</font></i>
     </left>
     <left>
         <br>
@@ -373,37 +401,25 @@
 </span>
 
  
-<h1 id="serverless---cicd-with-codepipeline">Serverless - CI/CD with CodePipeline</h1>
+<h1 id="serverless---monitoring-lambda-with-cloudwatch-and-x-ray">Serverless - Monitoring Lambda with CloudWatch and X-Ray</h1>
 <h4 id="overview">Overview</h4>
-<p>Continuous Integration, Continuous Delivery, Continuous Deployment (CI/CD) are software development practices for producing software in short cycles between merging source code changes and updating applications. The ultimate goal of these practices is to reduce the costs, time, and risks by delivering software in small pieces.</p>
-<p>In workshop 7 of this series, we will know about CI/CD flow building so that every time you change and push source code on the git repository, it will automatically re-update our services and applications. There are many tools for us to build CI/CD, the most popular are Jenkins, Gitlab CI, Circle CI. In this workshop, we will use AWS&rsquo;s CodePipeline.</p>
-<p>The CI/CD Architecture for back-end:
-<img src="/images/SAMPipeline.png?featherlight=false&amp;width=50pc" alt="SeverlessExample"></p>
+<p>Application monitoring and observation is an important step in application deployment to ensure that all of the application&rsquo;s services are working properly and are capable of handling in the event of a failure. AWS provides a tool to help us do that like AWS CloudWatch, AWS X-Ray, and AWS CloudTrail. In this article, we will learn how to debug AWS Lambda through AWS CloudWatch, monitor Lambda using CloudWatch&rsquo;s built-in metrics or custom metrics that we define, and how trace the API using AWS X-Ray.</p>
+<h4 id="amazon-cloudwatch">Amazon CloudWatch</h4>
+<p>Amazon CloudWatch monitors the AWS resources you use and the applications you run in real-time. Use CloudWatch to collect and track metrics, which are variables you can measure for your resources and applications. All the cloud services being used will provide metrics to CloudWatch and automatically display them when accessing the CloudWatch dashboard. CloudWatch also provides the following services:</p>
 <ul>
-<li>The develop create a git repository on CodeCommit and pushes code of SAM project on it</li>
-<li>Every time the source code is updated, CodeBuild will automaticlly rebild and prepare the CloudFormation template</li>
-<li>CloudFormation creates/updates serverless services</li>
+<li>Metrics: a set of metrics integrated into the AWS services that are being used</li>
+<li>Logs: collect and store log files</li>
+<li>Events: send notifications in response to events</li>
+<li>Alarms: set trigger thresholds (alerts) to trigger an action</li>
 </ul>
-<p>The CI/CD Architecture for website front-end:</p>
-<p><img src="/images/FrontEndPipeline.png?featherlight=false&amp;width=50pc" alt="SeverlessExample"></p>
-<ul>
-<li>The developer creates a git repo on CodeCommit and pushes the front-end code on it</li>
-<li>Every time the source code is updated, CodeBuild will automatically rebuild and then package the build folder</li>
-<li>Finally, the build folder is pushed to the S3 bucket with the static hosting website enabled</li>
-</ul>
-<h4 id="cicd">CI/CD</h4>
-<p><strong>CI</strong></p>
-<p>Continuous Integration is a software development practice in which developers regularly commit and push their local changes back to the shared repository (usually several times a day). By fetching and merging changes from other developers they mitigated the risk of complicated conflict resolution. Before each commit, developers can run unit tests locally on their source code as an additional check before integrating. A continuous integration service automatically builds and runs unit tests on the new source code changes to catch any errors immediately.</p>
-<p><strong>CD</strong></p>
-<p>Continuous Delivery is a software development practice that extends Continuous Integration in which source code changes are automatically prepared for deployment to a production instance. After a build, the build artifact with new changes is deployed to a staging instance where advanced (integration, acceptance, load, end-to-end, etc.) tests are run. If needed, the build artifact is automatically deployed to the production instance after manual approval.</p>
-<p>Continuous Deployment is a software development practice that extends Continuous Delivery in which source code changes are automatically deployed to a production instance. The difference between Continuous Delivery and Continuous Deployment is the presence of manual approval. With Continuous Delivery, deployment to production occurs automatically after manual approval. With Continuous Deployment, deployment to production occurs automatically without manual approval.</p>
+<h4 id="aws-x-ray">AWS X-ray</h4>
+<p>X-ray helps developers analyze and debug production, and distributed applications, such as those built using a microservices architecture. With X-ray, you can understand how your application and its underlying services work to identify and fix the root cause of performance problems and failures. X-ray provides an end-to-end view of requests as they move through your application and shows a map of the basic components of your application. You can use X-ray to analyze both development and production applications, from simple 3-level applications to complex microservices applications consisting of thousands of services.</p>
 <h4 id="content">Content</h4>
 <ol>
 <li><a href="1-preparation/">Preparation</a></li>
-<li><a href="2-build-sam-pipeline/">Build SAM pipeline</a></li>
-<li><a href="3-build-frontend-pipeline/">Build pipeline for frontend</a></li>
-<li><a href="4-test-operation/">Test web operation</a></li>
-<li><a href="5-cleanup">Cleanup</a></li>
+<li><a href="2-build-sam-pipeline/">Monitor with CloudWatch</a></li>
+<li><a href="3-build-frontend-pipeline/">Monitor with X-ray</a></li>
+<li><a href="4-cleanup">Resource Cleanup</a></li>
 </ol>
 	
   
@@ -499,6 +515,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -544,7 +576,7 @@
 	 
 		
 		
-			<a class="nav nav-next" href="/1-preparation/" title="Preparation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/1-preparation/" title="Preparing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -554,19 +586,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678132734"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678132734"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678132734"></script>
-    <script src="/js/jquery.sticky.js?1678132734"></script>
-    <script src="/js/featherlight.min.js?1678132734"></script>
-    <script src="/js/highlight.pack.js?1678132734"></script>
+    <script src="/js/clipboard.min.js?1678137066"></script>
+    <script src="/js/perfect-scrollbar.min.js?1678137066"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1678137066"></script>
+    <script src="/js/jquery.sticky.js?1678137066"></script>
+    <script src="/js/featherlight.min.js?1678137066"></script>
+    <script src="/js/highlight.pack.js?1678137066"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678132734"></script>
-    <script src="/js/learn.js?1678132734"></script>
-    <script src="/js/hugo-learn.js?1678132734"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1678137066"></script>
+    <script src="/js/learn.js?1678137066"></script>
+    <script src="/js/hugo-learn.js?1678137066"></script>
 
-    <link href="/mermaid/mermaid.css?1678132734" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678132734"></script>
+    <link href="/mermaid/mermaid.css?1678137066" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1678137066"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

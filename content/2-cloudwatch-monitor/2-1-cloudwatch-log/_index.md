@@ -1,59 +1,141 @@
 ---
-title : "Create Git repository"
-date :  "`r Sys.Date()`" 
+title : "Debugging with CloudWatch logs"
+date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 pre : " <b> 2.1. </b> "
 ---
-1. Run the following command to create a new CodeCommit repository
+1. Open **Postnam** to call api
+- Add a new tab
+- Select method **GET**
+- Paste the API URL recorded in the previous step and add `books` at the end
+- Press **Send**
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-1.png?featherlight=false&width=90pc)
+
+- After completing the data of the **Books** table is returned
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-2.png?featherlight=false&width=90pc)
+
+2. Open console of [AWS Lambda]()
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-3.png?featherlight=false&width=90pc)
+
+3. Click functions **books_list**
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-4.png?featherlight=false&width=90pc)
+
+4. Select the **Monitor** tab
+- Click **View logs CloudWatch**
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-5.png?featherlight=false&width=90pc)
+
+5. You will see all the logs saved each time the function **books_list** is executed
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-6.png?featherlight=false&width=90pc)
+
+6. Click on the latest log
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-6.png?featherlight=false&width=90pc)
+
+You should see the function running normally and without any errors. Next, we will fix the code to make the function run error.
+
+7. Modify the code as follows:
+
+
 ```
-aws codecommit create-repository --repository-name fcj-book-store-backend
-```
-You should see output similar to the following:
-```
-{
-    "repositoryMetadata": {
-        "accountId": "111111111111",
-        "repositoryId": "b782c34e-77dc-4627-8aea-ae8bd5ea46c3",
-        "repositoryName": "fcj-book-store-backend",
-        "lastModifiedDate": "2022-09-19T11:49:51.325000+07:00",
-        "creationDate": "2022-09-19T11:49:51.325000+07:00",
-        "cloneUrlHttp": "https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/fcj-book-store-backend",
-        "cloneUrlSsh": "ssh://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/fcj-book-store-backend",
-        "Arn": "arn:aws:codecommit:ap-southeast-1:111111111111:fcj-book-store-backend"
+import json
+import boto3
+from decimal import *
+from boto3.dynamodb.types import TypeDeserializer
+
+
+client = boto3.client('dynamodb') 
+serializer = TypeDeserializer()
+client_cloudwatch = boto3.client('cloudwatch')
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            return str(obj)
+        return json.JSONEncoder.default(self, obj)
+            
+def deserialize(data):
+    if isinstance(data, list):
+        return [deserialize(v) for v in data]
+
+    if isinstance(data, dict):
+        try:
+            return serializer.deserialize(data)
+        except TypeError:
+            return {k: deserialize(v) for k, v in data.items()}
+    else:
+        return data
+
+def lambda_handler(event, context):
+    try:
+        data_books = client.scan(
+            TableName='Book',
+            IndexName='name-index'
+        )
+    except Exception as e:
+        print(e)
+    
+    format_data_books = deserialize(data_books["Items"])
+    for book in format_data_books:
+        try:
+            data_comment = client.query(
+                TableName="Books", 
+                KeyConditionExpression="id = :id AND rv_id > :rv_id", 
+                ExpressionAttributeValues={
+                    ":id": {"S": book['id']}, 
+                    ":rv_id": {"N": "0"}
+                }
+            )
+            format_data_comment = deserialize(data_comment['Items'])
+            book["comments"] = format_data_comment
+        except Exception as e:
+            print(e)
+            
+    return {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token,XKey,Authorization"
+        },
+        "body": json.dumps(format_data_books, cls=DecimalEncoder)
     }
-}
 ```
-
-- Open [AWS CodeCommit console](https://ap-southeast-1.console.aws.amazon.com/codesuite/codecommit/repositories?region=ap-southeast-1) to check repository
-
-![CreateRepository](/images/2-build-sam-pipeline/2-1-create-git-repo-1.png?featherlight=false&width=90pc)
-
-2. Run the below commands at the sam project folder you downloaded - **fcj-book-store-sam-ws7** to initialize a local Git repository, add code and push to CodeCommit repository.
+- Đoạn bị thay đổi là:
 ```
-git init -b main
-echo -e "\n\n.aws-sam" >> .gitignore
-git add .
-git commit -m "Initial commit"
+    try:
+        data_books = client.scan(
+            TableName='Book',
+            IndexName='name-index'
+        )
+    except Exception as e:
+        print(e)
 ```
+The table name has been changed from **Book** and added try-except to catch errors
 
-![PushCode](/images/2-build-sam-pipeline/2-1-create-git-repo-2.png?featherlight=false&width=90pc)
-![PushCode](/images/2-build-sam-pipeline/2-1-create-git-repo-3.png?featherlight=false&width=90pc)
+8. Recall the API as in step 1, the error returned is **Internal server error**
+9. To see the specific error we go back to the CloudWatch logs dashboard. Wait a moment for the log to finish recording. Then click on the latest log
+10. Expand the error to see details
+11. If you want the error returned to be the same as the error recorded in the log, add the following code to the except block when scanning the **Book** table
 
-3. Add your CodeCommit repository URL as a remote on your local git project.
+
 ```
-git remote add origin codecommit://fcj-book-store-backend
+        return {
+            "statusCode": 400,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token,XKey,Authorization"
+            },
+            "body": str(e)
+        }
 ```
-{{% notice tip %}}
-If origin already exists or url is wrong, can remove it by running: `git remote rm origin`
-{{% /notice %}}
-
-4. Push code to CodeCommit repository by running the following command: 
-```
-git push -u origin main
-```
-
-5. Back to CodeCommit console
-- Click **fcj-book-store-backend** repository, you will see the code has been uploaded
-
-![PushCode](/images/2-build-sam-pipeline/2-1-create-git-repo-4.png?featherlight=false&width=90pc)
+12. Recall the API as in step 1, then the error returned will be the same as the error recorded in the log

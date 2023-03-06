@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Clean up resources :: AWS System Manager</title>
+    <title>Creating Alerts with CloudWatch Alarm :: AWS System Manager</title>
 
     
     <link href="/css/nucleus.css?1678137066" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/4-cleanup/">
+  <body class="" data-url="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -109,7 +109,7 @@
   
     
     <li data-nav-id="/2-cloudwatch-monitor/" title="Monitoring with CloudWatch" class="dd-item 
-        
+        parent
         
         
         ">
@@ -196,8 +196,8 @@
   
     
     <li data-nav-id="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/" title="Creating Alerts with CloudWatch Alarm" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/">
@@ -257,8 +257,8 @@
   
     
     <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/4-cleanup/">
@@ -309,7 +309,7 @@
                   
                     
                     
-                      <option id="en" value="/4-cleanup/" selected>English</option>
+                      <option id="en" value="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/" selected>English</option>
                     
                   
               
@@ -323,7 +323,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-cleanup/">Tiếng Việt</option>
+                      <option id="vi" value="/vi/2-cloudwatch-monitor/2-3-cloudwatch-alarm/">Tiếng Việt</option>
                     
                   
               
@@ -410,7 +410,13 @@
             
           
           
-            <a href='/'>Serverless - Monitoring Lambda with CloudWatch and X-Ray</a> > Clean up resources
+            
+            
+          
+          
+            <a href='/'>Serverless - Monitoring Lambda with CloudWatch and X-Ray</a> > <a href='/2-cloudwatch-monitor/'>Monitoring with CloudWatch</a> > Creating Alerts with CloudWatch Alarm
+          
+        
           
         
           
@@ -437,7 +443,7 @@
           
             <h1>
               
-              Clean up resources
+              Creating Alerts with CloudWatch Alarm
             </h1>
           
 
@@ -446,39 +452,45 @@
 
 
 	<ol>
-<li>Empty S3 bucket</li>
+<li>Open the dashboard of <a href="">CloudWatch</a></li>
+<li>Expand <strong>Alarms</strong> on the left side, press <strong>In alarm</strong></li>
+<li>Press <strong>Create alarm</strong></li>
+<li>Press <strong>Select metric</strong></li>
+<li>Select the metric created in the previous step - <strong>BooksList_Lambda</strong>, then press <strong>env</strong>, then select <strong>staging</strong></li>
 </ol>
 <ul>
-<li>Open the console of <a href="https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">AWS S3</a></li>
-<li>Select <strong>fcj-book-store</strong></li>
-<li>Press <strong>Empty</strong></li>
-<li>Enter <strong>permanently delete</strong></li>
-<li>Press <strong>Empty</strong></li>
-<li>Do the same with buckets starting with <strong>aws-sam-cli-managed-default-</strong> and bucket <strong>book-image-resize-store</strong></li>
+<li>Press <strong>Select metric</strong></li>
 </ul>
-<ol start="2">
-<li>Delete pipeline</li>
+<ol start="6">
+<li>Select <strong>Sum</strong> for <strong>Statistic</strong></li>
+<li>Set the condition in the item condition</li>
 </ol>
 <ul>
-<li>Open the console of <a href="https://ap-southeast-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=ap-southeast-1">AWS CodePipeline</a></li>
-<li>Select pipeline <strong>fcj-book-store-frontend-pipeline</strong></li>
-<li>Press <strong>Delete pipeline</strong></li>
-<li>Enter <strong>delete</strong></li>
-<li>Press <strong>Delete</strong></li>
-<li>Do the same with the remaining pipelines</li>
+<li>Select <strong>Static</strong> for <strong>Threshold type</strong></li>
+<li>Select <strong>Greater/Equal</strong> as the warning condition</li>
+<li>Enter <strong>2</strong> as the value of the alarm threshold</li>
 </ul>
-<ol start="3">
-<li>Clear stack of CloudFormation and CodeCommit repository</li>
+<ol start="8">
+<li>Click <strong>Next</strong></li>
+<li>Select <strong>Create new topic</strong></li>
+<li>Enter the topic name</li>
+<li>Enter the email you want to receive notifications for</li>
+<li>Click <strong>Create topic</strong></li>
+<li>Scroll down, click <strong>Next</strong></li>
+<li>Enter a name for the alert</li>
 </ol>
 <ul>
-<li>Run the command below:</li>
+<li>Click <strong>Next</strong></li>
 </ul>
-<pre tabindex="0"><code>aws codecommit delete-repository --repository-name fcj-book-store-backend
-aws codecommit delete-repository --repository-name fcj-book-store-frontend
-sam delete --stack-name fcj-book-store-backend-dev
-sam delete --stack-name fcj-book-store-backend
-sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
-</code></pre>
+<ol start="16">
+<li>Scroll to the bottom and press <strong>Create alarm</strong></li>
+<li>Back to Postman&rsquo;s screen, press <strong>Send</strong> twice to call the API twice</li>
+<li>Open email and check</li>
+<li>Back to the CloudWatch dashboard</li>
+<li>Click <strong>All alarms</strong>, then select the alarm you just created</li>
+<li>The histogram of the metric is displayed</li>
+</ol>
+
 
 
 
@@ -537,6 +549,7 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
             
                 
                     
+                    
                 
                 
 
@@ -551,6 +564,9 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -584,6 +600,7 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
             
                 
                     
+                    
                 
                 
 
@@ -594,22 +611,6 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -619,6 +620,24 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -640,10 +659,10 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-x-ray-trace/" title="Tracing with X-ray"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Create custom metric"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/1-preparation/" title="Preparing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-x-ray-trace/" title="Tracing with X-ray" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

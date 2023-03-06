@@ -1,29 +1,30 @@
 ---
-title : "Cleanup"
-date :  "`r Sys.Date()`" 
-weight : 5
+title : "Clean up resources"
+date : "`r Sys.Date()`"
+weight : 4
 chapter : false
 pre : " <b> 5. </b> "
 ---
 1. Empty S3 bucket
-- Open [AWS S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
+- Open the console of [AWS S3](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
 - Select **fcj-book-store**
-- Click **Empty**
+- Press **Empty**
 - Enter **permanently delete**
-- Click **Empty**
-- Do the same for bucket starting with **aws-sam-cli-managed-default-** and **book-image-resize-store** bucket
+- Press **Empty**
+- Do the same with buckets starting with **aws-sam-cli-managed-default-** and bucket **book-image-resize-store**
 2. Delete pipeline
-- Open [AWS CodePipeline console](https://ap-southeast-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=ap-southeast-1)
-- Select **fcj-book-store-frontend-pipeline** pipeline
-- Click **Delete pipeline**
+- Open the console of [AWS CodePipeline](https://ap-southeast-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=ap-southeast-1)
+- Select pipeline **fcj-book-store-frontend-pipeline**
+- Press **Delete pipeline**
 - Enter **delete**
-- Click **Delete**
-3. Delete CloudFormation stacks and CodeCommit repository
-- Execute the below commands:
+- Press **Delete**
+- Do the same with the remaining pipelines
+3. Clear stack of CloudFormation and CodeCommit repository
+- Run the command below:
 ```
 aws codecommit delete-repository --repository-name fcj-book-store-backend
 aws codecommit delete-repository --repository-name fcj-book-store-frontend
 sam delete --stack-name fcj-book-store-backend-dev
 sam delete --stack-name fcj-book-store-backend
-sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resourcest
+sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
 ```

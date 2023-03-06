@@ -75,6 +75,16 @@
                 />
   </url><url>
     <loc>/vi/2-cloudwatch-monitor/2-3-cloudwatch-alarm/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-cloudwatch-monitor/2-3-cloudwatch-alarm/"
+                />
   </url><url>
     <loc>/vi/4-cleanup/</loc>
     <xhtml:link

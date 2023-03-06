@@ -38,6 +38,18 @@
                 href="/"
                 />
   </url><url>
+    <loc>/2-cloudwatch-monitor/2-2-cloudwatch-metric/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-cloudwatch-monitor/2-2-cloudwatch-metric/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-cloudwatch-monitor/2-2-cloudwatch-metric/"
+                />
+  </url><url>
     <loc>/2-cloudwatch-monitor/</loc>
     <xhtml:link
                 rel="alternate"
@@ -50,16 +62,16 @@
                 href="/2-cloudwatch-monitor/"
                 />
   </url><url>
-    <loc>/2-cloudwatch-monitor/2-2-cloudwatch-metric/</loc>
+    <loc>/2-cloudwatch-monitor/2-3-cloudwatch-alarm/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-cloudwatch-monitor/2-2-cloudwatch-metric/"
+                href="/vi/2-cloudwatch-monitor/2-3-cloudwatch-alarm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-cloudwatch-monitor/2-2-cloudwatch-metric/"
+                href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/"
                 />
   </url><url>
     <loc>/3-x-ray-trace/</loc>

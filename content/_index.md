@@ -1,46 +1,27 @@
 ---
-title : "Serverless - CI/CD with CodePipeline"
-date :  "`r Sys.Date()`" 
-weight : 1 
+title : "Serverless - Monitoring Lambda with CloudWatch and X-Ray"
+date : "`r Sys.Date()`"
+weight : 1
 chapter : false
 ---
-# Serverless - CI/CD with CodePipeline
+# Serverless - Monitoring Lambda with CloudWatch and X-Ray
 
 #### Overview
-Continuous Integration, Continuous Delivery, Continuous Deployment (CI/CD) are software development practices for producing software in short cycles between merging source code changes and updating applications. The ultimate goal of these practices is to reduce the costs, time, and risks by delivering software in small pieces.
+Application monitoring and observation is an important step in application deployment to ensure that all of the application's services are working properly and are capable of handling in the event of a failure. AWS provides a tool to help us do that like AWS CloudWatch, AWS X-Ray, and AWS CloudTrail. In this article, we will learn how to debug AWS Lambda through AWS CloudWatch, monitor Lambda using CloudWatch's built-in metrics or custom metrics that we define, and how trace the API using AWS X-Ray.
 
-In workshop 7 of this series, we will know about CI/CD flow building so that every time you change and push source code on the git repository, it will automatically re-update our services and applications. There are many tools for us to build CI/CD, the most popular are Jenkins, Gitlab CI, Circle CI. In this workshop, we will use AWS's CodePipeline.
+#### Amazon CloudWatch
+Amazon CloudWatch monitors the AWS resources you use and the applications you run in real-time. Use CloudWatch to collect and track metrics, which are variables you can measure for your resources and applications. All the cloud services being used will provide metrics to CloudWatch and automatically display them when accessing the CloudWatch dashboard. CloudWatch also provides the following services:
+- Metrics: a set of metrics integrated into the AWS services that are being used
+- Logs: collect and store log files
+- Events: send notifications in response to events
+- Alarms: set trigger thresholds (alerts) to trigger an action
 
-The CI/CD Architecture for back-end:
-![SeverlessExample](/images/SAMPipeline.png?featherlight=false&width=50pc)
-
-- The develop create a git repository on CodeCommit and pushes code of SAM project on it
-- Every time the source code is updated, CodeBuild will automaticlly rebild and prepare the CloudFormation template
-- CloudFormation creates/updates serverless services
-
-The CI/CD Architecture for website front-end:
-
-![SeverlessExample](/images/FrontEndPipeline.png?featherlight=false&width=50pc)
-
-- The developer creates a git repo on CodeCommit and pushes the front-end code on it
-- Every time the source code is updated, CodeBuild will automatically rebuild and then package the build folder
-- Finally, the build folder is pushed to the S3 bucket with the static hosting website enabled
-
-#### CI/CD
-**CI**
-
-Continuous Integration is a software development practice in which developers regularly commit and push their local changes back to the shared repository (usually several times a day). By fetching and merging changes from other developers they mitigated the risk of complicated conflict resolution. Before each commit, developers can run unit tests locally on their source code as an additional check before integrating. A continuous integration service automatically builds and runs unit tests on the new source code changes to catch any errors immediately.
-
-**CD**
-
-Continuous Delivery is a software development practice that extends Continuous Integration in which source code changes are automatically prepared for deployment to a production instance. After a build, the build artifact with new changes is deployed to a staging instance where advanced (integration, acceptance, load, end-to-end, etc.) tests are run. If needed, the build artifact is automatically deployed to the production instance after manual approval.
-
-Continuous Deployment is a software development practice that extends Continuous Delivery in which source code changes are automatically deployed to a production instance. The difference between Continuous Delivery and Continuous Deployment is the presence of manual approval. With Continuous Delivery, deployment to production occurs automatically after manual approval. With Continuous Deployment, deployment to production occurs automatically without manual approval.
+#### AWS X-ray
+X-ray helps developers analyze and debug production, and distributed applications, such as those built using a microservices architecture. With X-ray, you can understand how your application and its underlying services work to identify and fix the root cause of performance problems and failures. X-ray provides an end-to-end view of requests as they move through your application and shows a map of the basic components of your application. You can use X-ray to analyze both development and production applications, from simple 3-level applications to complex microservices applications consisting of thousands of services.
 
 #### Content
 
  1. [Preparation](1-preparation/)
- 2. [Build SAM pipeline](2-build-sam-pipeline/)
- 3. [Build pipeline for frontend](3-build-frontend-pipeline/)
- 4. [Test web operation](4-test-operation/)
- 5. [Cleanup](5-cleanup)
+ 2. [Monitor with CloudWatch](2-build-sam-pipeline/)
+ 3. [Monitor with X-ray](3-build-frontend-pipeline/)
+ 4. [Resource Cleanup](4-cleanup)

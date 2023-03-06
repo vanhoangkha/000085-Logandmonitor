@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create SAM pipeline :: AWS System Manager</title>
+    <title>Create custom metric :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1678132734" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678132734" rel="stylesheet">
-    <link href="/css/hybrid.css?1678132734" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678132734" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678132734" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678132734" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678132734" rel="stylesheet">
-    <link href="/css/theme.css?1678132734" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678132734" rel="stylesheet">
+    <link href="/css/nucleus.css?1678137066" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1678137066" rel="stylesheet">
+    <link href="/css/hybrid.css?1678137066" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1678137066" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1678137066" rel="stylesheet">
+    <link href="/css/auto-complete.css?1678137066" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1678137066" rel="stylesheet">
+    <link href="/css/theme.css?1678137066" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1678137066" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678132734" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1678137066" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678132734"></script>
+    <script src="/js/jquery-3.3.1.min.js?1678137066"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678132734"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678132734"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1678137066"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1678137066"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678132734"></script>
+<script type="text/javascript" src="/js/search.js?1678137066"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/1-preparation/" title="Preparation" class="dd-item 
+    <li data-nav-id="/1-preparation/" title="Preparing" class="dd-item 
         
         
         
         ">
       <a href="/1-preparation/">
-           <b> 1. </b> Preparation
+           <b> 1. </b> Preparing
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/" title="Build SAM pipeline" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/" title="Monitoring with CloudWatch" class="dd-item 
         parent
         
         
         ">
       <a href="/2-cloudwatch-monitor/">
-           <b> 2. </b> Build SAM pipeline
+           <b> 2. </b> Monitoring with CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Create Git repository" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Debugging with CloudWatch logs" class="dd-item 
         
         
         
         ">
       <a href="/2-cloudwatch-monitor/2-1-cloudwatch-log/">
-           <b> 2.1. </b> Create Git repository
+           <b> 2.1. </b> Debugging with CloudWatch logs
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,13 +167,41 @@
  
   
     
-    <li data-nav-id="/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Create SAM pipeline" class="dd-item 
+    <li data-nav-id="/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Create custom metric" class="dd-item 
         parent
         active
         
         ">
       <a href="/2-cloudwatch-monitor/2-2-cloudwatch-metric/">
-           <b> 2.2. </b> Create SAM pipeline
+           <b> 2.2. </b> Create custom metric
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/" title="Creating Alerts with CloudWatch Alarm" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/">
+           <b> 2.3. </b> Creating Alerts with CloudWatch Alarm
           
             <i class="fas fa-check read-icon"></i>
           
@@ -202,13 +230,13 @@
  
   
     
-    <li data-nav-id="/3-x-ray-trace/" title="Build pipeline for front-end" class="dd-item 
+    <li data-nav-id="/3-x-ray-trace/" title="Tracing with X-ray" class="dd-item 
         
         
         
         ">
       <a href="/3-x-ray-trace/">
-           <b> 3. </b> Build pipeline for front-end
+           <b> 3. </b> Tracing with X-ray
           
             <i class="fas fa-check read-icon"></i>
           
@@ -228,13 +256,13 @@
  
   
     
-    <li data-nav-id="/4-cleanup/" title="Cleanup" class="dd-item 
+    <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
       <a href="/4-cleanup/">
-           <b> 5. </b> Cleanup
+           <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -333,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>18-01-2023</font></i>
+        <i><font color=orange>07-03-2023</font></i>
     </left>
     <left>
         <br>
@@ -386,7 +414,7 @@
             
           
           
-            <a href='/'>Serverless - CI/CD with CodePipeline</a> > <a href='/2-cloudwatch-monitor/'>Build SAM pipeline</a> > Create SAM pipeline
+            <a href='/'>Serverless - Monitoring Lambda with CloudWatch and X-Ray</a> > <a href='/2-cloudwatch-monitor/'>Monitoring with CloudWatch</a> > Create custom metric
           
         
           
@@ -399,15 +427,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -423,7 +443,7 @@
           
             <h1>
               
-              Create SAM pipeline
+              Create custom metric
             </h1>
           
 
@@ -431,264 +451,53 @@
 
 
 
-	<p>There are three distinct steps with SAM Pipelines and AWS CodePipeline.</p>
+	<p>CloudWatch metric provides several metrics for Lambda functions such as the number of times the function is executed, the execution time of each time, error rates, and throttle count. To see the metrics of a certain function we do the following:</p>
 <ol>
-<li>Create required IAM roles and infrastructure</li>
-<li>Create CloudFormation pipeline template</li>
-<li>Deploy CloudFormation pipeline template</li>
-</ol>
-<p>SAM Pipelines automates all of this for us</p>
-<h4 id="create-required-iam-roles-and-infrastructure">Create required IAM roles and infrastructure</h4>
-<ol>
-<li>Run the following command:</li>
-</ol>
-<pre tabindex="0"><code>sam pipeline init --bootstrap
-</code></pre><ol start="2">
-<li>Answer the questions with the following list:</li>
+<li>Open the Lambda function&rsquo;s dashboard</li>
+<li>Click the function <strong>book-list</strong></li>
+<li>Click the <strong>Monitor</strong> tab, select <strong>Metrics</strong></li>
 </ol>
 <ul>
-<li>Select a pipeline template to get started: AWS Quick Start Pipeline Templates (1)</li>
-<li>Select CI/CD system: AWS CodePipeline (5)</li>
-<li>Do you want to go through stage setup process now? [y/N]: y</li>
-<li>[1] Stage definition. Stage configuration name: dev</li>
-<li>[2] Account details. Select a credential source to associate with this stage: default (named profile) (2)</li>
-<li>Enter the region in which you want these resources to be created: Your region of choice</li>
-<li>Enter the pipeline IAM user ARN if you have previously … [] return/enter</li>
-<li>Enter the pipeline execution role ARN if you have previously … []: return/enter</li>
-<li>Enter the CloudFormation execution role ARN if you have previously … []: return/enter</li>
-<li>Please enter the artifact bucket ARN for your Lambda function. If you do not … []: return/enter</li>
-<li>Does your application contain any IMAGE type Lambda functions? [y/N]: N</li>
-<li>Press enter to confirm the values above … : return/enter</li>
-<li>Should we proceed with the creation? [y/N]: y</li>
+<li>Metrics are displayed</li>
 </ul>
-<pre tabindex="0"><code>sam pipeline init generates a pipeline configuration file that your CI/CD system
-can use to deploy serverless applications using AWS SAM.
-We will guide you through the process to bootstrap resources for each stage,
-then walk through the details necessary for creating the pipeline config file.
-
-Please ensure you are in the root folder of your SAM application before you begin.
-
-Select a pipeline template to get started:
-        1 - AWS Quick Start Pipeline Templates
-        2 - Custom Pipeline Template Location
-Choice: 1
-
-Cloning from https://github.com/aws/aws-sam-cli-pipeline-init-templates.git (process may take a moment)
-Select CI/CD system
-        1 - Jenkins
-        2 - GitLab CI/CD
-        3 - GitHub Actions
-        4 - Bitbucket Pipelines
-        5 - AWS CodePipeline
-Choice: 5
-You are using the 2-stage pipeline template.
- _________    _________ 
-|         |  |         |
-| Stage 1 |-&gt;| Stage 2 |
-|_________|  |_________|
-
-Checking for existing stages...
-
-[!] None detected in this account.
-
-Do you want to go through stage setup process now? If you choose no, you can still reference other bootstrapped resources. [y/N]: y
-
-For each stage, we will ask for [1] stage definition, [2] account details, and [3]
-reference application build resources in order to bootstrap these pipeline
-resources.
-
-We recommend using an individual AWS account profiles for each stage in your
-pipeline. You can set these profiles up using aws configure or ~/.aws/credentials. See
-[https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html].
-
-
-Stage 1 Setup
-
-[1] Stage definition
-Enter a configuration name for this stage. This will be referenced later when you use the sam pipeline init command:
-Stage configuration name: dev
-
-[2] Account details
-The following AWS credential sources are available to use.
-To know more about configuration AWS credentials, visit the link below:
-https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html                
-        1 - Environment variables (not available)
-        2 - default (named profile)
-        3 - produser (named profile)
-        q - Quit and configure AWS credentials
-Select a credential source to associate with this stage: 2
-Associated account 885078239936 with configuration dev.
-
-Enter the region in which you want these resources to be created [ap-southeast-1]: ap-southeast-1
-Enter the pipeline IAM user ARN if you have previously created one, or we will create one for you []: 
-
-[3] Reference application build resources
-Enter the pipeline execution role ARN if you have previously created one, or we will create one for you []: 
-Enter the CloudFormation execution role ARN if you have previously created one, or we will create one for you []: 
-Please enter the artifact bucket ARN for your Lambda function. If you do not have a bucket, we will create one for you []: 
-Does your application contain any IMAGE type Lambda functions? [y/N]: n
-
-[4] Summary
-Below is the summary of the answers:
-        1 - Account: 885078239936
-        2 - Stage configuration name: dev
-        3 - Region: ap-southeast-1
-        4 - Pipeline user: [to be created]
-        5 - Pipeline execution role: [to be created]
-        6 - CloudFormation execution role: [to be created]
-        7 - Artifacts bucket: [to be created]
-        8 - ECR image repository: [skipped]
-Press enter to confirm the values above, or select an item to edit the value: 
-
-This will create the following required resources for the &#39;dev&#39; configuration: 
-        - Pipeline IAM user
-        - Pipeline execution role
-        - CloudFormation execution role
-        - Artifact bucket
-Should we proceed with the creation? [y/N]: y
-        Creating the required resources...
-
-Checking for existing stages...
-</code></pre><p>Once this completes, you will see output which looks like the following:</p>
-<pre tabindex="0"><code>Successfully created!
-The following resources were created in your account:
-        - Pipeline IAM user
-        - Pipeline execution role
-        - CloudFormation execution role
-        - Artifact bucket
-Pipeline IAM user credential:
-        AWS_ACCESS_KEY_ID: AAAAAAAAAAAAIFRDVPDX
-        AWS_SECRET_ACCESS_KEY: xxxxxxxxxxxxxxxxxxxxxxkMYI9RatNgVcIybUwh
-</code></pre><ol start="3">
-<li>Open <a href="https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/">CloudFormation console</a></li>
-</ol>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-1.png?featherlight=false&amp;width=90pc" alt="CreatePipeline"></p>
 <ol start="4">
-<li>Click <strong>Stacks</strong> on the left menu to check if the stack has been created.</li>
+<li>Next we will create a new metric that sums up the number of hits to DynamoDB that fail</li>
+<li>Click the <strong>Code</strong> tab, add the following line of code at the top of the function</li>
 </ol>
-<ul>
-<li>Click to the displayed stack</li>
+<pre tabindex="0"><code>client_cloudwatch = boto3.client(&#39;cloudwatch&#39;)
+</code></pre><ul>
+<li>Add the following code to the except block of scan DynamoDB table before returning results</li>
 </ul>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-2.png?featherlight=false&amp;width=90pc" alt="CreatePipeline"></p>
-<ol start="5">
-<li>Click <strong>Resources</strong> tab, resources have been initialized</li>
-</ol>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-3.png?featherlight=false&amp;width=90pc" alt="CreatePipeline"></p>
+<pre tabindex="0"><code>        client_cloudwatch.put_metric_data(
+            Namespace=&#39;BooksList_Lambda&#39;,
+            MetricData=[
+                {
+                    &#39;MetricName&#39;: &#39;FailedConnectToDynamoDB&#39;,
+                    &#39;Dimensions&#39;: [
+                        {
+                            &#39;Name&#39;: &#39;env&#39;,
+                            &#39;Value&#39;: &#39;staging&#39;
+                        },
+                    ],
+                    &#39;Value&#39;: 1.0,
+                    &#39;Unit&#39;: &#39;Seconds&#39;
+                },
+            ]
+        )
+</code></pre><ul>
+<li>The code helps you to create a new metric and push the data into it every time the connection to DynamoDB fails</li>
+</ul>
 <ol start="6">
-<li>Back to the SAM pipeline creation screen</li>
+<li>Give the function permission to access and push data into metric</li>
+<li>Call GET API again</li>
+<li>Open the CloudWatch dashboard</li>
+<li>Click on Metrics in the left menu, then click <strong>All metrics</strong></li>
+<li>In the <strong>Custom namespaces</strong> section appears the metric you created - <strong>BooksList_Lambda</strong>. Click it</li>
+<li>Press <strong>env</strong></li>
+<li>Select <strong>staging</strong>, data display chart</li>
+<li>You can choose to display parameters according to 1 day or 1 week time, line or number displayed at the top of the graph
+So we have created a custom metric. Next step we will use it to create a CloudWatch Alarm</li>
 </ol>
-<ul>
-<li>Enter &ldquo;N&rdquo; to not create a second stage</li>
-</ul>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-4.png?featherlight=false&amp;width=90pc" alt="CreatePipeline"></p>
-<h4 id="create-cloudformation-pipeline-template">Create CloudFormation pipeline template</h4>
-<p>We continue to create a CloudFormation template that defines the entire CI/CD pipeline</p>
-<ol>
-<li>Answer the questions with the following list:</li>
-</ol>
-<ul>
-<li>What is the Git provider? Choice []: CodeCommit (2)</li>
-<li>What is the CodeCommit repository name?: fcj-book-store-backend</li>
-<li>What is the Git branch used for production deployments? [main]: main</li>
-<li>What is the template file path? [template.yaml]: template.yaml</li>
-<li>Select an index or enter the stage 1’s configuration name (as provided during the bootstrapping): 1</li>
-<li>What is the sam application stack name for stage 1? [sam-app]: fcj-book-store-backend-dev</li>
-<li>Select an index or enter the stage 2’s configuration name (as provided during the bootstrapping): 1</li>
-<li>What is the sam application stack name for stage 2? [sam-app]: fcj-book-store-backend-dev</li>
-</ul>
-<pre tabindex="0"><code>What is the Git provider?
-        1 - Bitbucket
-        2 - CodeCommit
-        3 - GitHub
-        4 - GitHubEnterpriseServer
-Choice []: 2
-What is the CodeCommit repository name?: fcj-book-store-backend
-What is the Git branch used for production deployments? [main]: main
-What is the template file path? [template.yaml]: template.yaml
-We use the stage configuration name to automatically retrieve the bootstrapped resources created when you ran `sam pipeline bootstrap`.
-
-Here are the stage configuration names detected in .aws-sam/pipeline/pipelineconfig.toml:
-        1 - dev
-        2 - prod
-Select an index or enter the stage 1&#39;s configuration name (as provided during the bootstrapping): 1
-What is the sam application stack name for stage 1? [sam-app]: fcj-book-store-backend-dev
-Stage 1 configured successfully, configuring stage 2.
-
-Here are the stage configuration names detected in .aws-sam/pipeline/pipelineconfig.toml:
-        1 - dev
-        2 - prod
-Select an index or enter the stage 2&#39;s configuration name (as provided during the bootstrapping): 1
-What is the sam application stack name for stage 2? [sam-app]: fcj-book-store-backend-dev
-Stage 2 configured successfully.
-To deploy this template and connect to the main git branch, run this against the leading account:
-`sam deploy -t codepipeline.yaml --stack-name &lt;stack-name&gt; --capabilities=CAPABILITY_IAM`.
-SUMMARY
-We will generate a pipeline config file based on the following information:
-        What is the Git provider?: CodeCommit
-        What is the CodeCommit repository name?: fcj-book-store-backend
-        …………………
-        What is the ECR repository URI for stage 2?: 
-        What is the AWS region for stage 2?: ap-southeast-1
-Successfully created the pipeline configuration file(s):
-        - codepipeline.yaml
-        - assume-role.sh
-        - pipeline/buildspec_unit_test.yml
-        - pipeline/buildspec_build_package.yml
-        - pipeline/buildspec_integration_test.yml
-        - pipeline/buildspec_feature.yml
-        - pipeline/buildspec_deploy.yml
-</code></pre><ol start="2">
-<li>Once this completes, your project should have the structure below</li>
-</ol>
-<pre tabindex="0"><code>└── fcj-book-store-sam-ws7
-    ├── codepipeline.yaml       # (new) CodePipeline CloudFormation template
-    ├── assume-role.sh          # (new) Helper script for CodePipeline
-    ├── pipeline/               # (new) Build Specs for CodeBuild
-    ├── events
-    ├── fcj-book-store/         # SAM application root
-    ├── README.md
-    └── template.yaml           # SAM template
-</code></pre><h4 id="deploy-cloudformation-pipeline-template">Deploy CloudFormation pipeline template</h4>
-<ol>
-<li>Run the following commands to upload the newly created folders and files to the CodeCommit repository</li>
-</ol>
-<pre tabindex="0"><code>git add .
-git commit -m &#34;Adding SAM CI/CD Pipeline definition&#34;
-git push
-</code></pre><ol start="2">
-<li>Then, deplou SAM Pipeline by the following command:</li>
-</ol>
-<pre tabindex="0"><code>sam deploy -t codepipeline.yaml --stack-name fcj-book-store-backend-pipeline --capabilities=CAPABILITY_IAM
-</code></pre><ol start="3">
-<li>Wait for a while, back to the CloudFormation console to check</li>
-</ol>
-<ul>
-<li>Reload the stack list</li>
-<li>Select <strong>fcj-book-store-backend</strong> stack</li>
-</ul>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-5.png?featherlight=false&amp;width=90pc" alt="DeployPipeline"></p>
-<ol start="4">
-<li>Open <a href="https://ap-southeast-1.console.aws.amazon.com/codesuite/codepipeline/start?region=ap-southeast-1">CodePipeline console</a></li>
-</ol>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-6.png?featherlight=false&amp;width=90pc" alt="DeployPipeline"></p>
-<ol start="5">
-<li>A pipeline is being processed</li>
-</ol>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-7.png?featherlight=false&amp;width=90pc" alt="DeployPipeline"></p>
-<ol start="6">
-<li>Wait for a while to to complete pipeline processing</li>
-</ol>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-8.png?featherlight=false&amp;width=90pc" alt="DeployPipeline"></p>
-<ol start="7">
-<li>Back to the CloudFormation console, reload the stack list</li>
-</ol>
-<ul>
-<li>Select <strong>fcj-book-store-backend-dev</strong> stack</li>
-<li>Click <strong>Outputs</strong> tab</li>
-<li>Note down the API URL to use in the next step</li>
-</ul>
-<p><img src="/images/2-build-sam-pipeline/2-2-create-pipeline-9.png?featherlight=false&amp;width=90pc" alt="DeployPipeline"></p>
-<p>So we have successfully deployed SAM Pipeline. The next step is to develop the pipeline for the front-end part of the web application.</p>
 
 
 
@@ -795,9 +604,6 @@ git push
             
         
                     
-            
-        
-                    
                         
             
             
@@ -805,6 +611,25 @@ git push
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -842,10 +667,10 @@ git push
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Create Git repository"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Debugging with CloudWatch logs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-x-ray-trace/" title="Build pipeline for front-end" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-cloudwatch-monitor/2-3-cloudwatch-alarm/" title="Creating Alerts with CloudWatch Alarm" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -855,19 +680,19 @@ git push
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678132734"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678132734"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678132734"></script>
-    <script src="/js/jquery.sticky.js?1678132734"></script>
-    <script src="/js/featherlight.min.js?1678132734"></script>
-    <script src="/js/highlight.pack.js?1678132734"></script>
+    <script src="/js/clipboard.min.js?1678137066"></script>
+    <script src="/js/perfect-scrollbar.min.js?1678137066"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1678137066"></script>
+    <script src="/js/jquery.sticky.js?1678137066"></script>
+    <script src="/js/featherlight.min.js?1678137066"></script>
+    <script src="/js/highlight.pack.js?1678137066"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678132734"></script>
-    <script src="/js/learn.js?1678132734"></script>
-    <script src="/js/hugo-learn.js?1678132734"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1678137066"></script>
+    <script src="/js/learn.js?1678137066"></script>
+    <script src="/js/hugo-learn.js?1678137066"></script>
 
-    <link href="/mermaid/mermaid.css?1678132734" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678132734"></script>
+    <link href="/mermaid/mermaid.css?1678137066" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1678137066"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
