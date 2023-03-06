@@ -3,7 +3,7 @@ title : "Dọn dẹp tài nguyên"
 date :  "`r Sys.Date()`" 
 weight : 4
 chapter : false
-pre : " <b> 5. </b> "
+pre : " <b> 4. </b> "
 ---
 1. Làm rỗng S3 bucket
 - Mở bảng điều khiển của [AWS S3](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
