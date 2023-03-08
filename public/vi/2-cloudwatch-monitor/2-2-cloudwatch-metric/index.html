@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo custome metric :: AWS System Manager</title>
+    <title>Tạo custom metric :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1678137212" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678137212" rel="stylesheet">
-    <link href="/css/hybrid.css?1678137212" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678137212" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678137212" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678137212" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678137212" rel="stylesheet">
-    <link href="/css/theme.css?1678137212" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678137212" rel="stylesheet">
+    <link href="/css/nucleus.css?1678259142" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1678259142" rel="stylesheet">
+    <link href="/css/hybrid.css?1678259142" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1678259142" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1678259142" rel="stylesheet">
+    <link href="/css/auto-complete.css?1678259142" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1678259142" rel="stylesheet">
+    <link href="/css/theme.css?1678259142" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1678259142" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678137212" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1678259142" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678137212"></script>
+    <script src="/js/jquery-3.3.1.min.js?1678259142"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678137212"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678137212"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1678259142"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1678259142"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678137212"></script>
+<script type="text/javascript" src="/js/search.js?1678259142"></script>
 
     
   </div>
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Tạo custome metric" class="dd-item 
-        parent
+    <li data-nav-id="/vi/2-cloudwatch-monitor/2-2-cloudwatch-metric/" title="Tạo custom metric" class="dd-item 
+        
         active
         
         ">
       <a href="/vi/2-cloudwatch-monitor/2-2-cloudwatch-metric/">
-           <b> 2.2. </b> Tạo custome metric
+           <b> 2.2. </b> Tạo custom metric
           
             <i class="fas fa-check read-icon"></i>
           
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
+        <i><font color=orange>08-03-2023</font></i>
     </left>
     <left>
         <br>
@@ -414,7 +414,7 @@
             
           
           
-            <a href='/vi/'>Serverless - Giám sát Lambda với CloudWatch và X-Ray</a> > <a href='/vi/2-cloudwatch-monitor/'>Giám sát với CloudWatch</a> > Tạo custome metric
+            <a href='/vi/'>Serverless - Giám sát Lambda với CloudWatch và X-Ray</a> > <a href='/vi/2-cloudwatch-monitor/'>Giám sát với CloudWatch</a> > Tạo custom metric
           
         
           
@@ -443,7 +443,7 @@
           
             <h1>
               
-              Tạo custome metric
+              Tạo custom metric
             </h1>
           
 
@@ -489,12 +489,45 @@
 </ul>
 <ol start="6">
 <li>Cấp quyền cho function được phép truy cập vào đẩy dữ liệu vào metric</li>
+</ol>
+<ul>
+<li>Ấn <strong>Configure</strong> tab, sau đó chọn <strong>Permissions</strong> ở menu phía bên trái. Ấn vào role của lambda function</li>
+</ul>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-2.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ul>
+<li>Mở rộng <strong>BooklistRole..</strong> policy, sau đó ấn <strong>Edit</strong></li>
+</ul>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-3.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ul>
+<li>Ấn <strong>JSON</strong> tab, thêm các dòng dưới đây vào trình chỉnh sửa:</li>
+</ul>
+<pre tabindex="0"><code>{
+    &#34;Sid&#34;: &#34;VisualEditor0&#34;,
+    &#34;Effect&#34;: &#34;Allow&#34;,
+    &#34;Action&#34;: &#34;cloudwatch:PutMetricData&#34;,
+    &#34;Resourse&#34;: &#34;*&#34;
+},
+</code></pre><p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-4.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ul>
+<li>Ấn <strong>Review policy</strong>, sau đó ấn <strong>Save change</strong></li>
+</ul>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-5.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ol start="7">
 <li>Gọi GET API lần nữa</li>
 <li>Mở bảng điều khiển của CloudWatch</li>
 <li>Ấn vào Mectrics ở menu phía bên trái, sau đó ấn <strong>All metrics</strong></li>
 <li>Trong mục <strong>Custom namespaces</strong> xuất hiện metric mà bạn tạo - <strong>BooksList_Lambda</strong>. Ấn vào nó</li>
+</ol>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-6.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ol start="11">
 <li>Ấn <strong>env</strong></li>
+</ol>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-7.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ol start="12">
 <li>Chọn <strong>staging</strong>, biểu đồ hiện thị dữ liệu</li>
+</ol>
+<p><img src="/images/2-cloudwatch-monitor/2-1-custom-metric-8.png?featherlight=false&amp;width=90pc" alt="ChangeCode"></p>
+<ol start="13">
 <li>Bạn có thể tuy chọn các thông số hiện thị theo thời gian 1 ngày hay 1 tuần, kiểu hiện thị dòng hay số ở phía bên trên đồ thị
 Vậy là chúng ta đã tạo xong một custom metric. Bước tiếp theo chúng ta sẽ sử dụng nó để tạo một CloudWatch Alarm</li>
 </ol>
@@ -680,19 +713,19 @@ Vậy là chúng ta đã tạo xong một custom metric. Bước tiếp theo ch�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678137213"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678137213"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678137213"></script>
-    <script src="/js/jquery.sticky.js?1678137213"></script>
-    <script src="/js/featherlight.min.js?1678137213"></script>
-    <script src="/js/highlight.pack.js?1678137213"></script>
+    <script src="/js/clipboard.min.js?1678259142"></script>
+    <script src="/js/perfect-scrollbar.min.js?1678259142"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1678259142"></script>
+    <script src="/js/jquery.sticky.js?1678259142"></script>
+    <script src="/js/featherlight.min.js?1678259142"></script>
+    <script src="/js/highlight.pack.js?1678259142"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678137213"></script>
-    <script src="/js/learn.js?1678137213"></script>
-    <script src="/js/hugo-learn.js?1678137213"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1678259142"></script>
+    <script src="/js/learn.js?1678259142"></script>
+    <script src="/js/hugo-learn.js?1678259142"></script>
 
-    <link href="/mermaid/mermaid.css?1678137213" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678137213"></script>
+    <link href="/mermaid/mermaid.css?1678259142" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1678259142"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

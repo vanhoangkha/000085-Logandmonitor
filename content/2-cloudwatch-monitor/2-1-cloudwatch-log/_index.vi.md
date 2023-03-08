@@ -36,7 +36,7 @@ pre : " <b> 2.1. </b> "
 
 6. Ấn vào log mới nhất
 
-![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-6.png?featherlight=false&width=90pc)
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-7.png?featherlight=false&width=90pc)
 
 Bạn sẽ thấy function chạy bình thường và không có lỗi gì. Tiếp theo chúng ta sẽ sửa code để function chạy lỗi.
 
@@ -121,6 +121,9 @@ Tên bảng đã được thay đổi từ sang thành **Book** và thêm try-ex
 8. Gọi lại API như bước số 1, lỗi trả về là **Internal server error**
 9. Để xem lỗi cụ thể chúng ta quay lại bảng điều khiển của CloudWatch logs. Đợi một lát để log ghi xong. Sau đó ấn vào log mới nhất
 10. Mở rộng lỗi để xem chi tiết
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-8.png?featherlight=false&width=90pc)
+
 11. Nếu bạn muốn lỗi trả về giống với lỗi được ghi trong log thì bạn thêm đoạn code sau vào except block khi scan bảng **Book**
 ```
         return {
@@ -135,3 +138,5 @@ Tên bảng đã được thay đổi từ sang thành **Book** và thêm try-ex
         }
 ```
 12. Gọi lại API như bước số 1, khi đó lỗi trả về sẽ giống với lỗi được ghi trong log
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-9.png?featherlight=false&width=90pc)

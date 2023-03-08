@@ -108,7 +108,7 @@ def lambda_handler(event, context):
         "body": json.dumps(format_data_books, cls=DecimalEncoder)
     }
 ```
-- Đoạn bị thay đổi là:
+- The changed sources is:
 ```
     try:
         data_books = client.scan(
@@ -122,6 +122,9 @@ The table name has been changed from **Book** and added try-except to catch erro
 
 8. Recall the API as in step 1, the error returned is **Internal server error**
 9. To see the specific error we go back to the CloudWatch logs dashboard. Wait a moment for the log to finish recording. Then click on the latest log
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-8.png?featherlight=false&width=90pc)
+
 10. Expand the error to see details
 11. If you want the error returned to be the same as the error recorded in the log, add the following code to the except block when scanning the **Book** table
 
@@ -139,3 +142,5 @@ The table name has been changed from **Book** and added try-except to catch erro
         }
 ```
 12. Recall the API as in step 1, then the error returned will be the same as the error recorded in the log
+
+![CreateRepository](/images/2-cloudwatch-monitor/2-1-cloudwatch-log-9.png?featherlight=false&width=90pc)

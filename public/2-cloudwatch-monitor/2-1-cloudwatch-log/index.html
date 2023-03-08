@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Debugging with CloudWatch logs :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1678137212" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678137212" rel="stylesheet">
-    <link href="/css/hybrid.css?1678137212" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678137212" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678137212" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678137212" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678137212" rel="stylesheet">
-    <link href="/css/theme.css?1678137212" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678137212" rel="stylesheet">
+    <link href="/css/nucleus.css?1678259142" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1678259142" rel="stylesheet">
+    <link href="/css/hybrid.css?1678259142" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1678259142" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1678259142" rel="stylesheet">
+    <link href="/css/auto-complete.css?1678259142" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1678259142" rel="stylesheet">
+    <link href="/css/theme.css?1678259142" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1678259142" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678137212" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1678259142" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678137212"></script>
+    <script src="/js/jquery-3.3.1.min.js?1678259142"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678137212"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678137212"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1678259142"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1678259142"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678137212"></script>
+<script type="text/javascript" src="/js/search.js?1678259142"></script>
 
     
   </div>
@@ -140,7 +140,7 @@
   
     
     <li data-nav-id="/2-cloudwatch-monitor/2-1-cloudwatch-log/" title="Debugging with CloudWatch logs" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -361,7 +361,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
+        <i><font color=orange>08-03-2023</font></i>
     </left>
     <left>
         <br>
@@ -556,7 +556,7 @@ def lambda_handler(event, context):
         &#34;body&#34;: json.dumps(format_data_books, cls=DecimalEncoder)
     }
 </code></pre><ul>
-<li>Đoạn bị thay đổi là:</li>
+<li>The changed sources is:</li>
 </ul>
 <pre tabindex="0"><code>    try:
         data_books = client.scan(
@@ -569,6 +569,9 @@ def lambda_handler(event, context):
 <ol start="8">
 <li>Recall the API as in step 1, the error returned is <strong>Internal server error</strong></li>
 <li>To see the specific error we go back to the CloudWatch logs dashboard. Wait a moment for the log to finish recording. Then click on the latest log</li>
+</ol>
+<p><img src="/images/2-cloudwatch-monitor/2-1-cloudwatch-log-8.png?featherlight=false&amp;width=90pc" alt="CreateRepository"></p>
+<ol start="10">
 <li>Expand the error to see details</li>
 <li>If you want the error returned to be the same as the error recorded in the log, add the following code to the except block when scanning the <strong>Book</strong> table</li>
 </ol>
@@ -585,6 +588,7 @@ def lambda_handler(event, context):
 </code></pre><ol start="12">
 <li>Recall the API as in step 1, then the error returned will be the same as the error recorded in the log</li>
 </ol>
+<p><img src="/images/2-cloudwatch-monitor/2-1-cloudwatch-log-9.png?featherlight=false&amp;width=90pc" alt="CreateRepository"></p>
 
 
 
@@ -764,19 +768,19 @@ def lambda_handler(event, context):
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678137212"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678137212"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678137212"></script>
-    <script src="/js/jquery.sticky.js?1678137212"></script>
-    <script src="/js/featherlight.min.js?1678137212"></script>
-    <script src="/js/highlight.pack.js?1678137212"></script>
+    <script src="/js/clipboard.min.js?1678259142"></script>
+    <script src="/js/perfect-scrollbar.min.js?1678259142"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1678259142"></script>
+    <script src="/js/jquery.sticky.js?1678259142"></script>
+    <script src="/js/featherlight.min.js?1678259142"></script>
+    <script src="/js/highlight.pack.js?1678259142"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678137212"></script>
-    <script src="/js/learn.js?1678137212"></script>
-    <script src="/js/hugo-learn.js?1678137212"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1678259142"></script>
+    <script src="/js/learn.js?1678259142"></script>
+    <script src="/js/hugo-learn.js?1678259142"></script>
 
-    <link href="/mermaid/mermaid.css?1678137212" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678137212"></script>
+    <link href="/mermaid/mermaid.css?1678259142" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1678259142"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
