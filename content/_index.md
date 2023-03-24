@@ -1,10 +1,10 @@
 ---
-title : "Serverless - Monitoring Lambda with CloudWatch and X-Ray"
+title : "Serverless - Monitoring Serverless app with CloudWatch and X-Ray"
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 ---
-# Serverless - Monitoring Lambda with CloudWatch and X-Ray
+# Serverless - Monitoring Serverless app with CloudWatch and X-Ray
 
 #### Overview
 Application monitoring and observation is an important step in application deployment to ensure that all of the application's services are working properly and are capable of handling in the event of a failure. AWS provides a tool to help us do that like AWS CloudWatch, AWS X-Ray, and AWS CloudTrail. In this article, we will learn how to debug AWS Lambda through AWS CloudWatch, monitor Lambda using CloudWatch's built-in metrics or custom metrics that we define, and how trace the API using AWS X-Ray.
