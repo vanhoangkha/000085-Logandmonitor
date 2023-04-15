@@ -26,7 +26,7 @@ Trong phần này chúng ta sẽ kích hoạt X-ray cho Lambda function để tr
 - Ấn **Traces**
 - Kéo xuống cuối ấn vào trace đang hiện thị
 
-![CreateAlarm](/images/3-x-ray-trace/3-x-ray-trace-3.png?featherlight=false&width=90pc)
+![CreateAlarm](/images/3-x-ray-trace/3-x-ray-trace-11.png?featherlight=false&width=90pc)
 
 
 - Initialization subsegment: đại diện cho giai đoạn init của vòng đời môi trường thực thi của Lambda. Trong giai đoạn này, Lambda tạo hoặc mở môi trường thực thi với các tài nguyên đã được cấu hình, tải xuống mã hàm và tất cả cá lớp, chạy runtime và khởi tạo hàm.

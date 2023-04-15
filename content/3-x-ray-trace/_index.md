@@ -26,7 +26,7 @@ In this section we will enable X-ray for the Lambda function to track incoming a
 - Press **Traces**
 - Scroll to the bottom and click on the currently displayed trace
 
-![CreateAlarm](/images/3-x-ray-trace/3-x-ray-trace-3.png?featherlight=false&width=90pc)
+![CreateAlarm](/images/3-x-ray-trace/3-x-ray-trace-11.png?featherlight=false&width=90pc)
 
 - Initialization subsegment: represents the init phase of the Lambda execution environment lifecycle. During this phase, Lambda creates or opens an execution environment with configured resources, downloads the function code and all classes, runs the runtime, and initializes the function.
 - Invocation subsegment: represents the stage when Lambda calls the function handler. This starts with the runtime and registers the extension and it ends when the runtime is ready to send a response.

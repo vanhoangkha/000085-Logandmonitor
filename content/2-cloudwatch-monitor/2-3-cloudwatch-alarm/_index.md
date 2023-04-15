@@ -59,5 +59,3 @@ pre : " <b> 2.3. </b> "
 19. Back to the CloudWatch dashboard
 20. Click **All alarms**, then select the alarm you just created
 21. The histogram of the metric is displayed
-
-![CreateAlarm](/images/2-cloudwatch-monitor/2-3-cloudwatch-alarm-13.png?featherlight=false&width=90pc)

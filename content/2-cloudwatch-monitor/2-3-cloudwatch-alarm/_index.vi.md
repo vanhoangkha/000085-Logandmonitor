@@ -65,5 +65,3 @@ pre : " <b> 2.3. </b> "
 19. Trở lại với bảng điều khiển của CloudWatch
 20. Ấn **All alarms**, sau đó chọn cảnh báo mà bạn vừa tạo
 21. Biểu đồ của metric được hiện thị
-
-![CreateAlarm](/images/2-cloudwatch-monitor/2-3-cloudwatch-alarm-13.png?featherlight=false&width=90pc)

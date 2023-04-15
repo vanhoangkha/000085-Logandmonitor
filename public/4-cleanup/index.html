@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Clean up resources :: Serverless - Monitoring Serverless app with CloudWatch and X-Ray</title>
+    <title>Cleanup :: Serverless - Monitoring Serverless app with CloudWatch and X-Ray</title>
 
     
-    <link href="/css/nucleus.css?1681361734" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1681361734" rel="stylesheet">
-    <link href="/css/hybrid.css?1681361734" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1681361734" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1681361734" rel="stylesheet">
-    <link href="/css/auto-complete.css?1681361734" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1681361734" rel="stylesheet">
-    <link href="/css/theme.css?1681361734" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1681361734" rel="stylesheet">
+    <link href="/css/nucleus.css?1681548976" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1681548976" rel="stylesheet">
+    <link href="/css/hybrid.css?1681548976" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1681548976" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1681548976" rel="stylesheet">
+    <link href="/css/auto-complete.css?1681548976" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1681548976" rel="stylesheet">
+    <link href="/css/theme.css?1681548976" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1681548976" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1681361734" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1681548976" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1681361734"></script>
+    <script src="/js/jquery-3.3.1.min.js?1681548976"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1681361734"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1681361734"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1681548976"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1681548976"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1681361734"></script>
+<script type="text/javascript" src="/js/search.js?1681548976"></script>
 
     
   </div>
@@ -256,13 +256,13 @@
  
   
     
-    <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/4-cleanup/" title="Cleanup" class="dd-item 
         
         active
         
         ">
       <a href="/4-cleanup/">
-           <b> 4. </b> Clean up resources
+           <b> 5. </b> Cleanup
           
             <i class="fas fa-check read-icon"></i>
           
@@ -410,7 +410,7 @@
             
           
           
-            <a href='/'>Serverless - Monitoring Serverless app with CloudWatch and X-Ray</a> > Clean up resources
+            <a href='/'>Serverless - Monitoring Serverless app with CloudWatch and X-Ray</a> > Cleanup
           
         
           
@@ -437,7 +437,7 @@
           
             <h1>
               
-              Clean up resources
+              Cleanup
             </h1>
           
 
@@ -449,35 +449,18 @@
 <li>Empty S3 bucket</li>
 </ol>
 <ul>
-<li>Open the console of <a href="https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">AWS S3</a></li>
+<li>Open <a href="https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">AWS S3 console</a></li>
 <li>Select <strong>fcj-book-store</strong></li>
-<li>Press <strong>Empty</strong></li>
+<li>Click <strong>Empty</strong></li>
 <li>Enter <strong>permanently delete</strong></li>
-<li>Press <strong>Empty</strong></li>
-<li>Do the same with buckets starting with <strong>aws-sam-cli-managed-default-</strong> and bucket <strong>book-image-resize-store</strong></li>
+<li>Click <strong>Empty</strong></li>
+<li>Do the same for bucket starting with <strong>aws-sam-cli-managed-default-</strong> and <strong>book-image-resize-store</strong> bucket</li>
 </ul>
 <ol start="2">
-<li>Delete pipeline</li>
+<li>Delete CloudFormation stacks:</li>
 </ol>
-<ul>
-<li>Open the console of <a href="https://ap-southeast-1.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=ap-southeast-1">AWS CodePipeline</a></li>
-<li>Select pipeline <strong>fcj-book-store-frontend-pipeline</strong></li>
-<li>Press <strong>Delete pipeline</strong></li>
-<li>Enter <strong>delete</strong></li>
-<li>Press <strong>Delete</strong></li>
-<li>Do the same with the remaining pipelines</li>
-</ul>
-<ol start="3">
-<li>Clear stack of CloudFormation and CodeCommit repository</li>
-</ol>
-<ul>
-<li>Run the command below:</li>
-</ul>
-<pre tabindex="0"><code>aws codecommit delete-repository --repository-name fcj-book-store-backend
-aws codecommit delete-repository --repository-name fcj-book-store-frontend
-sam delete --stack-name fcj-book-store-backend-dev
-sam delete --stack-name fcj-book-store-backend
-sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
+<pre tabindex="0"><code>sam delete --stack-name fcjdmssam
+sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resourcest
 </code></pre>
 
 
@@ -653,19 +636,19 @@ sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1681361734"></script>
-    <script src="/js/perfect-scrollbar.min.js?1681361734"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1681361734"></script>
-    <script src="/js/jquery.sticky.js?1681361734"></script>
-    <script src="/js/featherlight.min.js?1681361734"></script>
-    <script src="/js/highlight.pack.js?1681361734"></script>
+    <script src="/js/clipboard.min.js?1681548976"></script>
+    <script src="/js/perfect-scrollbar.min.js?1681548976"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1681548976"></script>
+    <script src="/js/jquery.sticky.js?1681548976"></script>
+    <script src="/js/featherlight.min.js?1681548976"></script>
+    <script src="/js/highlight.pack.js?1681548976"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1681361734"></script>
-    <script src="/js/learn.js?1681361734"></script>
-    <script src="/js/hugo-learn.js?1681361734"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1681548976"></script>
+    <script src="/js/learn.js?1681548976"></script>
+    <script src="/js/hugo-learn.js?1681548976"></script>
 
-    <link href="/mermaid/mermaid.css?1681361734" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1681361734"></script>
+    <link href="/mermaid/mermaid.css?1681548976" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1681548976"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

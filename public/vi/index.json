@@ -53,7 +53,7 @@
 	"title": "Dọn dẹp tài nguyên",
 	"tags": [],
 	"description": "",
-	"content": " Làm rỗng S3 bucket Mở bảng điều khiển của AWS S3 Chọn fcj-book-store Ấn Empty Nhập permanently delete Ấn Empty Làm tương tự với bucket bắt đầu bằng aws-sam-cli-managed-default- và bucket book-image-resize-store Xoá pipeline Mở bảng điều khiển của AWS CodePipeline Chọn pipeline fcj-book-store-frontend-pipeline Ấn Delete pipeline Nhập delete Ấn Delete Làm tương tự với các pipeline còn lại Xoá stack của CloudFormation và CodeCommit repository Chạy câu lệnh dưới đây: aws codecommit delete-repository --repository-name fcj-book-store-backend aws codecommit delete-repository --repository-name fcj-book-store-frontend sam delete --stack-name fcj-book-store-backend-dev sam delete --stack-name fcj-book-store-backend sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources "
+	"content": " Làm rỗng S3 bucket Mở bảng điều khiển của AWS S3 Chọn fcjdmsstore Ấn Empty Nhập permanently delete Ấn Empty Làm tương tự với bucket bắt đầu bằng aws-sam-cli-managed-default- và bucket fcjdmswebstore Xoá stack của CloudFormation sam delete --stack-name fcjdmssam sam delete --stack-name aws-sam-cli-managed-dev-pipeline-resources "
 },
 {
 	"uri": "/vi/categories/",
