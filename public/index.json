@@ -11,7 +11,7 @@
 	"title": "Preparing",
 	"tags": [],
 	"description": "",
-	"content": "Before doing the main content of this workshop, we prepare the services and data for the application.\nDownload the source code of the sam project below SAM source fcj-book-store-sam-ws8.zip (10262 ko) Run the command below to deploy sam sam build sam deploy --guided "
+	"content": "Before doing the main content of this workshop, we prepare the services and data for the application.\nDownload the source code of the sam project below SAM source fcj-book-store-sam-ws8.zip (10262 ko) Run the command below to deploy sam sam build sam deploy --guided You should install python3.9 because the lambda function uses python3.9\nWe have prepared the necessary source for the next steps.\n"
 },
 {
 	"uri": "/",

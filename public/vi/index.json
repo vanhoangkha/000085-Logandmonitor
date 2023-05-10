@@ -4,7 +4,7 @@
 	"title": "Chuẩn bị",
 	"tags": [],
 	"description": "",
-	"content": "Trước khi thực hiện nội dung chính của workshop này, chúng ta chuẩn bị các dịch vụ và dữ liệu cho ứng dụng.\nTải source code của sam project dưới đây SAM source fcj-book-store-sam-ws8.zip (10262 ko) Chạy câu lệnh dưới đây để triển khai sam sam build sam deploy --guided Chúng ta đã chuẩn bị xong source cần thiết cho các bước tiếp theo.\n"
+	"content": "Trước khi thực hiện nội dung chính của workshop này, chúng ta chuẩn bị các dịch vụ và dữ liệu cho ứng dụng.\nTải source code của sam project dưới đây SAM source fcj-book-store-sam-ws8.zip (10262 ko) Chạy câu lệnh dưới đây để triển khai sam sam build sam deploy --guided Bạn nên cài đặt python3.9 vì các hàm lambda sử dụng python3.9\nChúng ta đã chuẩn bị xong source cần thiết cho các bước tiếp theo.\n"
 },
 {
 	"uri": "/vi/2-cloudwatch-monitor/2-1-cloudwatch-log/",

@@ -15,3 +15,9 @@ Before doing the main content of this workshop, we prepare the services and data
 sam build
 sam deploy --guided
 ```
+
+{{% notice note %}}
+You should install python3.9 because the lambda function uses python3.9
+{{% /notice %}}
+
+We have prepared the necessary source for the next steps.

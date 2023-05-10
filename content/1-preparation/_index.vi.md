@@ -16,4 +16,8 @@ sam build
 sam deploy --guided
 ```
 
+{{% notice note %}}
+Bạn nên cài đặt python3.9 vì các hàm lambda sử dụng python3.9
+{{% /notice %}}
+
 Chúng ta đã chuẩn bị xong source cần thiết cho các bước tiếp theo.
