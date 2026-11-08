@@ -20,7 +20,7 @@ Amazon CloudWatch monitors the AWS resources you use and the applications you ru
    - Create custom metric
    - Creating Alerts with CloudWatch Alarm
 3. Tracing with X-ray
-4. Cleanup
+4. Clean up
 
 ## Prerequisites
 
